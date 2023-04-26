@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spam Classifier</title>
+  </head>
+  <body>
+    <h1>Enter a message:</h1>
+    <form method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data">
+      <textarea name="text" id="text" cols="30" rows="10"></textarea>
+      <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+		<p>Prediction: {{ prediction }}</p>
+	{% endif %}
+  </body>
+</html>
